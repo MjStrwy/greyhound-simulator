@@ -13,15 +13,20 @@ namespace aDayAtTheRaces
         public int RacetrackLength;
         public PictureBox MyPictureBox = null;
         public int Location = 0;
-        public Random Randomizer = new Random();
+        public Random Randomizer;
 
-        public bool Run()
+        public bool Run(PictureBox racetrack)
         {
             //move forward either 1, 2, 3, or 4 spaces at random
+            this.MyPictureBox.Left += this.Randomizer.Next(2, 7);
             //update the position of my picturebox on the form
             //MyPictureBox.Left = StartingPosition + Location;
             //return true if I won the race
-            return true;
+            if(this.MyPictureBox.Right > racetrack.Right)
+            {
+                return true;
+            }
+            return false;
         }
 
         public void TakeStartingPosition()

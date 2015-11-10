@@ -37,20 +37,20 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.radioAl = new System.Windows.Forms.RadioButton();
+            this.radioBob = new System.Windows.Forms.RadioButton();
+            this.radioJoe = new System.Windows.Forms.RadioButton();
+            this.btnBets = new System.Windows.Forms.Button();
             this.numDog = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.numBets = new System.Windows.Forms.NumericUpDown();
             this.lblName = new System.Windows.Forms.Label();
+            this.radioGroupBox = new System.Windows.Forms.GroupBox();
             this.btnRace = new System.Windows.Forms.Button();
             this.lblAl = new System.Windows.Forms.Label();
             this.lblBob = new System.Windows.Forms.Label();
             this.lblJoe = new System.Windows.Forms.Label();
             this.lblBets = new System.Windows.Forms.Label();
-            this.radioAl = new System.Windows.Forms.RadioButton();
-            this.radioBob = new System.Windows.Forms.RadioButton();
-            this.radioJoe = new System.Windows.Forms.RadioButton();
-            this.btnBets = new System.Windows.Forms.Button();
-            this.radioGroupBox = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.racetrackPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -109,8 +109,8 @@
             // 
             // timer1
             // 
-            this.timer1.Enabled = true;
-            this.timer1.Interval = 1000;
+            this.timer1.Interval = 10;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // groupBox1
             // 
@@ -134,6 +134,51 @@
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Betting Parlor";
+            // 
+            // radioAl
+            // 
+            this.radioAl.AutoSize = true;
+            this.radioAl.Location = new System.Drawing.Point(20, 87);
+            this.radioAl.Name = "radioAl";
+            this.radioAl.Size = new System.Drawing.Size(34, 17);
+            this.radioAl.TabIndex = 3;
+            this.radioAl.Text = "Al";
+            this.radioAl.UseVisualStyleBackColor = true;
+            this.radioAl.CheckedChanged += new System.EventHandler(this.radioAl_CheckedChanged);
+            // 
+            // radioBob
+            // 
+            this.radioBob.AutoSize = true;
+            this.radioBob.Location = new System.Drawing.Point(20, 61);
+            this.radioBob.Name = "radioBob";
+            this.radioBob.Size = new System.Drawing.Size(44, 17);
+            this.radioBob.TabIndex = 2;
+            this.radioBob.Text = "Bob";
+            this.radioBob.UseVisualStyleBackColor = true;
+            this.radioBob.CheckedChanged += new System.EventHandler(this.radioBob_CheckedChanged);
+            // 
+            // radioJoe
+            // 
+            this.radioJoe.AutoSize = true;
+            this.radioJoe.Checked = true;
+            this.radioJoe.Location = new System.Drawing.Point(20, 35);
+            this.radioJoe.Name = "radioJoe";
+            this.radioJoe.Size = new System.Drawing.Size(42, 17);
+            this.radioJoe.TabIndex = 1;
+            this.radioJoe.TabStop = true;
+            this.radioJoe.Text = "Joe";
+            this.radioJoe.UseVisualStyleBackColor = true;
+            this.radioJoe.CheckedChanged += new System.EventHandler(this.radioJoe_CheckedChanged);
+            // 
+            // btnBets
+            // 
+            this.btnBets.Location = new System.Drawing.Point(51, 147);
+            this.btnBets.Name = "btnBets";
+            this.btnBets.Size = new System.Drawing.Size(37, 23);
+            this.btnBets.TabIndex = 14;
+            this.btnBets.Text = "Bets";
+            this.btnBets.UseVisualStyleBackColor = true;
+            this.btnBets.Click += new System.EventHandler(this.btnBets_Click);
             // 
             // numDog
             // 
@@ -182,6 +227,16 @@
             this.lblName.TabIndex = 9;
             this.lblName.Text = "name";
             // 
+            // radioGroupBox
+            // 
+            this.radioGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioGroupBox.Location = new System.Drawing.Point(14, 20);
+            this.radioGroupBox.Name = "radioGroupBox";
+            this.radioGroupBox.Size = new System.Drawing.Size(125, 107);
+            this.radioGroupBox.TabIndex = 15;
+            this.radioGroupBox.TabStop = false;
+            this.radioGroupBox.Text = "Minimum Bet:";
+            // 
             // btnRace
             // 
             this.btnRace.Location = new System.Drawing.Point(387, 35);
@@ -228,61 +283,6 @@
             this.lblBets.Size = new System.Drawing.Size(36, 13);
             this.lblBets.TabIndex = 4;
             this.lblBets.Text = "Bets:";
-            // 
-            // radioAl
-            // 
-            this.radioAl.AutoSize = true;
-            this.radioAl.Location = new System.Drawing.Point(20, 87);
-            this.radioAl.Name = "radioAl";
-            this.radioAl.Size = new System.Drawing.Size(34, 17);
-            this.radioAl.TabIndex = 3;
-            this.radioAl.Text = "Al";
-            this.radioAl.UseVisualStyleBackColor = true;
-            this.radioAl.CheckedChanged += new System.EventHandler(this.radioAl_CheckedChanged);
-            // 
-            // radioBob
-            // 
-            this.radioBob.AutoSize = true;
-            this.radioBob.Location = new System.Drawing.Point(20, 61);
-            this.radioBob.Name = "radioBob";
-            this.radioBob.Size = new System.Drawing.Size(44, 17);
-            this.radioBob.TabIndex = 2;
-            this.radioBob.Text = "Bob";
-            this.radioBob.UseVisualStyleBackColor = true;
-            this.radioBob.CheckedChanged += new System.EventHandler(this.radioBob_CheckedChanged);
-            // 
-            // radioJoe
-            // 
-            this.radioJoe.AutoSize = true;
-            this.radioJoe.Checked = true;
-            this.radioJoe.Location = new System.Drawing.Point(20, 35);
-            this.radioJoe.Name = "radioJoe";
-            this.radioJoe.Size = new System.Drawing.Size(42, 17);
-            this.radioJoe.TabIndex = 1;
-            this.radioJoe.TabStop = true;
-            this.radioJoe.Text = "Joe";
-            this.radioJoe.UseVisualStyleBackColor = true;
-            this.radioJoe.CheckedChanged += new System.EventHandler(this.radioJoe_CheckedChanged);
-            // 
-            // btnBets
-            // 
-            this.btnBets.Location = new System.Drawing.Point(51, 147);
-            this.btnBets.Name = "btnBets";
-            this.btnBets.Size = new System.Drawing.Size(37, 23);
-            this.btnBets.TabIndex = 14;
-            this.btnBets.Text = "Bets";
-            this.btnBets.UseVisualStyleBackColor = true;
-            this.btnBets.Click += new System.EventHandler(this.btnBets_Click);
-            // 
-            // radioGroupBox
-            // 
-            this.radioGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioGroupBox.Location = new System.Drawing.Point(14, 20);
-            this.radioGroupBox.Name = "radioGroupBox";
-            this.radioGroupBox.Size = new System.Drawing.Size(125, 107);
-            this.radioGroupBox.TabIndex = 15;
-            this.radioGroupBox.TabStop = false;
-            this.radioGroupBox.Text = "Minimum Bet:";
             // 
             // Form1
             // 

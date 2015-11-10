@@ -22,7 +22,7 @@ namespace aDayAtTheRaces
 
         public int PayOut(int Winner)
         {
-            //paramter is winner of race. if the dog won, return the amount bet
+            //parameter is winner of race. if the dog won, return the amount bet
             //otherwise, return the negative of the amount bet
             if (Winner == this.Dog)
             {
